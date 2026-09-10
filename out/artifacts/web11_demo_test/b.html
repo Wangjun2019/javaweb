@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>部门信息录入</title>
+    <style>
+        body {padding:20px;}
+        .box {max-width:400px; margin:0 auto;}
+        .item {margin:12px 0;}
+        label {display:block; margin-bottom:4px;}
+        input {width:100%; padding:7px; box-sizing:border-box;}
+        button {width:100%; padding:9px; background:#1890ff; color:#fff; border:none; border-radius:4px;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>添加新部门</h2>
+    <form action="/web11_demo_test/save" method="post">
+        <div class="item">
+            <label>部门编号</label>
+            <input type="text" name="deptId" required>
+        </div>
+        <div class="item">
+            <label>部门名称</label>
+            <input type="text" name="deptName2" required>
+        </div>
+        <div class="item">
+            <label>部门地理位置</label>
+            <input type="text" name="location" required>
+        </div>
+        <button type="submit">保存</button>
+    </form>
+</div>
+</body>
+</html>

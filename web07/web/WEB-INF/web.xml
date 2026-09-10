@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <servlet>
+        <servlet-name>crbgb</servlet-name>
+        <servlet-class>com.changzhi.servlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>crbgb</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ergretgrt</servlet-name>
+        <servlet-class>com.changzhi.servlet2.WelcomeServlet</servlet-class>
+        <!-- 给当前这个Servlet添加配置信息，这个配置信息自动被封装到 ServletConfig对象中了。 -->
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>admin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123</param-value>
+        </init-param>
+        <init-param>
+            <param-name>pageSize</param-name>
+            <param-value>5</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ergretgrt</servlet-name>
+        <url-pattern>/wel2</url-pattern>
+    </servlet-mapping>
+</web-app>

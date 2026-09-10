@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!--这个叫做上下文初始化参数。所有servlet共享。 -->
+    <!--这个配置信息会被自动封装到 ServletContext对象中。 -->
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>admin</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>1234</param-value>
+    </context-param>
+
+
+    <servlet>
+        <servlet-name>testConfig2333</servlet-name>
+        <servlet-class>com.changzhi.servlet.ServletConfigTest</servlet-class>
+        <!--给当前这个Servlet配置一个信息。 -->
+        <!--配置初始化参数-->
+        <init-param>
+            <!--参数名字-->
+            <param-name>driver</param-name>
+            <!--参数的值-->
+            <param-value>com.mysql.cj.jdbc.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>pageSize</param-name>
+            <param-value>10</param-value>
+        </init-param>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>1234</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:mysql://localhost:3306/test</param-value>
+        </init-param>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>testConfig2333</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>testConfig23334</servlet-name>
+        <servlet-class>com.changzhi.servlet.ServletContextTest</servlet-class>
+
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>testConfig23334</servlet-name>
+        <url-pattern>/test2</url-pattern>
+    </servlet-mapping>
+
+</web-app>
