@@ -19,7 +19,5 @@ public class WelcomeServlet extends GenericServlet {
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html;charset=utf-8");
         res.getWriter().print("<h1>欢迎你！</h1>");
-
-
     }
 }

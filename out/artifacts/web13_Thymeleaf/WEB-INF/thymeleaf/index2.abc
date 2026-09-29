@@ -1,0 +1,22 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"> <!-- ✅告诉浏览器用utf8解析页面 -->
+    <title>Thymeleaf简单Demo</title>
+</head>
+<body>
+    <h3>基础变量展示 th:text</h3>
+    <p>用户名：<span th:text="${username}">默认名字</span></p>
+    <p>年龄：<span th:text="${age}">0</span></p>
+
+    <h3>条件判断 th:if</h3>
+    <p th:if="${age >= 18}">成年人，可以访问</p>
+    <p th:if="${age < 18}">未成年</p>
+
+    <h3>循环遍历 th:each</h3>
+    <ul>
+        <li th:each="hobby : ${hobbyList}" th:text="${hobby}"></li>
+    </ul>
+
+</body>
+</html>

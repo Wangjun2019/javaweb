@@ -1,0 +1,19 @@
+<configuration>
+    <!-- 只输出 ERROR 级别及以上的日志 -->
+    <logger name="org.thymeleaf" level="ERROR"/>
+
+    <!-- 关闭 Thymeleaf 初始化 DEBUG 日志 -->
+    <logger name="org.thymeleaf.TemplateEngine" level="INFO"/>
+
+    <!-- 控制台输出格式简化 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%thread] %-5level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 全局日志级别设为 WARN -->
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

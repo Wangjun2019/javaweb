@@ -4,6 +4,13 @@
       <root url="jar://$PROJECT_DIR$/web05/lib2/servlet-api.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../tomcat-10.1.59/apache-tomcat-10.1.59-src.zip!/apache-tomcat-10.1.59-src/java" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat-10.1.59/apache-tomcat-10.1.59-src.zip!/apache-tomcat-10.1.59-src/modules/jdbc-pool/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat-10.1.59/apache-tomcat-10.1.59-src.zip!/apache-tomcat-10.1.59-src/modules/jdbc-pool/src/test/java" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat-10.1.59/apache-tomcat-10.1.59-src.zip!/apache-tomcat-10.1.59-src/test" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat-10.1.59/apache-tomcat-10.1.59-src.zip!/apache-tomcat-10.1.59-src/webapps/docs/appdev/sample/src" />
+      <root url="jar://$PROJECT_DIR$/../../tomcat-10.1.59/apache-tomcat-10.1.59-src.zip!/apache-tomcat-10.1.59-src/webapps/examples/WEB-INF/classes" />
+    </SOURCES>
   </library>
 </component>

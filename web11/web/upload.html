@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传测试</title>
+</head>
+<body>
+<!-- action对应servlet地址，method必须post，enctype="multipart/form-data" 是文件上传必填！ -->
+<form action="/web11_demo_test/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file233" />
+    <br><br>
+    <button type="submit">提交上传</button>
+</form>
+</body>
+</html>
+
+<!--
+1. `method="post"` 不能是 get
+2. `enctype="multipart/form-data"` 文件上传**必须加**，不加后端拿不到 Part
+3. `<input type="file" name="file">` 这里`name="file"`必须和代码里`request.getPart("file")`名字完全一致！
+-->

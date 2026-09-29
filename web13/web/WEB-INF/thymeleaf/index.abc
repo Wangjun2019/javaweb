@@ -1,0 +1,9 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Servlet集成Thymeleaf</title>
+</head>
+<body>
+    <p th:text="'Hello, ' + ${username}">Hello, jackson</p>
+</body>
+</html>

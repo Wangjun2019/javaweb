@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+
+
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>com.changzhi.filter3.LoginCheckFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <!-- 所有的/filter3开头的请求路径，都走这个过滤器 -->
+        <url-pattern>/filter3/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>characterFilter</filter-name>
+        <filter-class>com.changzhi.filter3.CharacterEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterFilter</filter-name>
+        <!-- 所有的/test开头的请求路径，都走这个过滤器 -->
+        <url-pattern>/filter3/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 服务器启动的时候，会去自动监听这个类 -->
+    <!-- 过滤器在tomcat服务启动的时候，会自动实例化（全部的过滤器）-->
+    <listener>
+        <listener-class>com.changzhi.listener.MyServletContextListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>commonCodeFilter</filter-name>
+        <filter-class>com.changzhi.filter2.CommonCodeFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>commonCodeFilter</filter-name>
+        <!-- 请求路径以 /filter2开头的路径，都走这个过滤器 -->
+        <url-pattern>/filter2/*</url-pattern>
+    </filter-mapping>
+
+</web-app>

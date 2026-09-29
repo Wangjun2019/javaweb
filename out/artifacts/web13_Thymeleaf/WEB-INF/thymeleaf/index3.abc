@@ -1,0 +1,82 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf综合案例</title>
+    <style>
+        .box{margin:10px 0;padding:8px;border:1px solid #ccc;}
+    </style>
+</head>
+<body>
+<div class="box">
+    <h4>1. 基础变量 + 运算、字符串拼接</h4>
+    <p>姓名：<span th:text="${name}">默认名字</span></p>
+    <p>分数：<span th:text="${score}">0</span></p>
+    <p>加分后：<span th:text="${score + 5}"></span></p>
+    <p th:text="'用户姓名：' + ${name}"></p>
+</div>
+
+<div class="box">
+    <h4>2. 读取对象属性 ${对象.属性}</h4>
+    <p>用户姓名：<span th:text="${user.username}"></span></p>
+    <p>用户年龄：<span th:text="${user.age}"></span></p>
+    <p>邮箱：<span th:text="${user.email}"></span></p>
+</div>
+
+<div class="box">
+    <h4>3. 条件判断 th:if / th:unless</h4>
+    <p th:if="${isVip}">✅ 是VIP会员</p>
+    <p th:unless="${isVip}">❌ 不是VIP</p>
+
+    <p th:if="${score >= 90}">优秀</p>
+    <p th:if="${score >=60 and score <90}">及格</p>
+    <p th:if="${score <60}">不及格</p>
+</div>
+
+<div class="box">
+    <h4>4. th:each 遍历普通集合 + 状态变量stat</h4>
+    <ul>
+        <li th:each="fruit,stat : ${fruitList}">
+            序号：<span th:text="${stat.count}"></span>
+            水果：<span th:text="${fruit}"></span>
+        </li>
+    </ul>
+</div>
+
+<div class="box">
+    <h4>5. th:each 遍历对象集合（常用！）</h4>
+    <table border="1" cellpadding="4">
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>邮箱</th>
+        </tr>
+        <tr th:each="u,stat : ${userList}">
+            <td th:text="${stat.count}"></td>
+            <td th:text="${u.username}"></td>
+            <td th:text="${u.age}"></td>
+            <td th:text="${u.email}"></td>
+        </tr>
+    </table>
+</div>
+
+<div class="box">
+    <h4>6. 表单相关 th:value</h4>
+    <input type="text" th:value="${name}" placeholder="姓名">
+</div>
+
+<div class="box">
+    <h4>7. 链接表达式 @{}</h4>
+    <a th:href="@{/hello}">回到hello页面</a>
+    <!-- 带参数url -->
+    <a th:href="@{/hello(name=${name})}">带参数访问</a>
+</div>
+
+<div class="box">
+    <h4>8. 三元运算符</h4>
+    <p th:text="${score >=60 ? '考试通过' : '考试不通过'}"></p>
+</div>
+
+</body>
+</html>
